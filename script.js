@@ -46,10 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
                                 // 1. Open Google Group in new tab
                                 window.open(joinBtnLink.href, '_blank');
 
-                                // 2. Wait 15 seconds, then redirect THIS page to Play Store
+                                // 2. Wait 1.5 seconds, then redirect THIS page to Play Store
                                 setTimeout(() => {
                                     window.location.href = "https://play.google.com/store/apps/details?id=rajibul.fugofresh.tracker";
-                                }, 15000);
+                                }, 1500);
                             }
                         }, 3000); // 3 seconds after last step appears
                     }
