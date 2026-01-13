@@ -1,0 +1,626 @@
+:root {
+    --primary-color: #01875f;
+    /* Google Play Green */
+    --primary-dark: #016e4d;
+    --text-color: #202124;
+    --text-secondary: #5f6368;
+    --bg-color: #ffffff;
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    /* User requested gradient: A3FF87 on top and E0FFD4 down */
+    background: linear-gradient(180deg, #A3FF87 0%, #E0FFD4 100%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Background Wrapper removed as requested (replaced by body gradient) */
+.background-wrapper {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    /* Pushing content down and right as requested */
+    padding: 6rem 10% 4rem 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Play Store Header Layout */
+/* Play Store Header Layout */
+.play-header {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    /* Mobile: Column layout for centering */
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    padding: 2rem 1rem 0.5rem 1rem;
+}
+
+@media (min-width: 768px) {
+    .play-header {
+        flex-direction: row;
+        /* Desktop: Row layout */
+        align-items: center;
+        text-align: left;
+        gap: 3rem;
+        padding-left: 1rem;
+    }
+}
+
+.header-icon {
+    flex-shrink: 0;
+}
+
+.app-logo-lg {
+    width: 84px;
+    /* Mobile Icon Size */
+    height: 84px;
+    border-radius: 20%;
+    /* Standard Squircle */
+    /* Subtle shadow for the icon */
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .app-logo-lg {
+        width: 180px;
+        /* Desktop Icon Size */
+        height: 180px;
+    }
+}
+
+.header-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+}
+
+h1 {
+    font-size: 1.5rem;
+    /* Smaller H1 on mobile */
+    font-weight: 500;
+    color: #202124;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    /* Increased from 0.2rem */
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #01875f;
+    /* Dev Name color */
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    /* Increased from 0.5rem */
+}
+
+.meta-tags {
+    font-size: 0.8rem;
+    color: #5f6368;
+    margin-bottom: 1rem;
+}
+
+/* Install Action Area */
+.install-area {
+    margin-top: 0;
+    width: 100%;
+    max-width: 500px;
+    /* Center on mobile */
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .install-area {
+        text-align: left;
+        margin-left: 0;
+        margin-right: auto;
+    }
+}
+
+.compact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+    /* Center items on mobile */
+}
+
+@media (min-width: 768px) {
+    .compact-form {
+        align-items: flex-start;
+    }
+}
+
+.instruction-text {
+    font-size: 0.9rem;
+    color: #202124;
+    display: none;
+}
+
+.input-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+    width: 100%;
+}
+
+@media (min-width: 480px) {
+    .input-row {
+        flex-direction: row;
+        align-items: flex-start;
+        /* Center button on mobile row if desired, or keep stretch */
+    }
+}
+
+/* Input removed, but keep style just in case */
+
+.install-btn {
+    background-color: #01875f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    /* Slightly more rounded */
+    font-family: 'Google Sans', 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.8rem 2.5rem;
+    /* Wider button */
+    cursor: pointer;
+    transition: background 0.1s;
+    white-space: nowrap;
+    width: 100%;
+    /* Full width on mobile */
+}
+
+@media (min-width: 480px) {
+    .install-btn {
+        width: auto;
+        /* Auto width on desktop */
+    }
+}
+
+.install-btn:hover {
+    background-color: #016e4d;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.real-install-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #01875f;
+    color: white;
+    text-decoration: none;
+    padding: 0.7rem 2rem;
+    border-radius: 4px;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+}
+
+@media (min-width: 480px) {
+    .real-install-btn {
+        width: auto;
+    }
+}
+
+.success-text {
+    color: #01875f;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .success-text {
+        justify-content: flex-start;
+    }
+}
+
+/* Main Body Description Removed */
+
+/* Main Content */
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Screenshots */
+.screenshots-section {
+    width: 100%;
+    margin-bottom: 4rem;
+    padding: 0;
+    overflow: hidden;
+}
+
+.screenshots-container {
+    position: relative;
+    width: 100%;
+    /* Ensure buttons stay within specific width maxes if needed, or full width */
+}
+
+.screenshots-section h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #202124;
+    font-weight: 500;
+    text-align: center;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5f6368;
+    transition: all 0.2s;
+    opacity: 0.8;
+}
+
+.scroll-btn:hover {
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+}
+
+.left-btn {
+    left: 10px;
+}
+
+.right-btn {
+    right: 10px;
+}
+
+/* Buttons visible on all screens now */
+/* @media (max-width: 768px) {
+    .scroll-btn {
+        display: none;
+    }
+} */
+
+.screenshots-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding: 1rem 2rem 2rem 2rem;
+    -webkit-overflow-scrolling: touch;
+    /* Allow scrolling on mobile, center on desktop when content fits */
+    justify-content: flex-start;
+    scroll-snap-type: x mandatory;
+}
+
+/* Center content when all screenshots fit on screen */
+@media (min-width: 1400px) {
+    .screenshots-scroll {
+        justify-content: center;
+    }
+}
+
+.screenshot-item {
+    flex: 0 0 auto;
+    /* Mobile: Show almost full screen width */
+    width: calc(100vw - 4rem);
+    max-width: 320px;
+    scroll-snap-align: center;
+}
+
+/* Tablet */
+@media (min-width: 600px) {
+    .screenshot-item {
+        width: 280px;
+        max-width: none;
+    }
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+    .screenshot-item {
+        width: 220px;
+    }
+}
+
+/* Large Desktop - show all images nicely */
+@media (min-width: 1200px) {
+    .screenshot-item {
+        width: 200px;
+    }
+}
+
+.screenshot-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.screenshot-item img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Google Sign-in Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    /* Google uses Roboto mostly */
+}
+
+.google-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.google-g-logo {
+    width: 24px;
+    height: 24px;
+}
+
+.modal-content h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #202124;
+}
+
+.modal-content p {
+    font-size: 0.9rem;
+    color: #5f6368;
+    margin-bottom: 1.5rem;
+}
+
+.account-list {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+}
+
+.account-item {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    gap: 1rem;
+    border-bottom: 1px solid #f1f3f4;
+    transition: background 0.2s;
+    text-align: left;
+}
+
+.account-item:last-child {
+    border-bottom: none;
+}
+
+.account-item:hover {
+    background: #f1f3f4;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: purple;
+    /* Default avatar color */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-size: 0.9rem;
+    color: #3c4043;
+    font-weight: 500;
+}
+
+.user-email {
+    font-size: 0.8rem;
+    color: #5f6368;
+}
+
+.policy-text {
+    font-size: 0.75rem !important;
+    text-align: left;
+    line-height: 1.4;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-top: auto;
+    color: #4a4a4a;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* Guide Section Styles */
+.guide-section {
+    width: 100%;
+    margin-bottom: 3rem;
+    padding: 1rem;
+}
+
+.guide-section h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    color: #202124;
+    font-weight: 500;
+}
+
+.guide-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.guide-step {
+    flex: 1 1 200px;
+    max-width: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.guide-step.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.guide-step:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.guide-step img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.step-badge {
+    background-color: #01875f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 135, 95, 0.3);
+}
+
+.guide-step p {
+    font-weight: 600;
+    color: #3c4043;
+    font-size: 1rem;
+}
+
+/* Guide Action Button */
+.guide-action {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.guide-action:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.join-group-btn {
+    background-color: #01875f;
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, background 0.2s;
+}
+
+.join-group-btn:hover {
+    transform: scale(1.05);
+    background-color: #016e4d;
+}

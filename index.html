@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FugoFresh: AI Calorie Tracker - Beta Access</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Background Gradient -->
+    <div class="background-wrapper">
+        <img src="assets/Fugo_p.png" alt="" class="bg-gradient-img">
+        <div class="bg-overlay"></div>
+    </div>
+
+    <!-- Play Store Style Header -->
+    <div class="play-header fade-in-down">
+        <!-- Left Column: Icon -->
+        <div class="header-icon">
+            <img src="assets/FugoFresh.png" alt="FugoFresh Logo" class="app-logo-lg">
+        </div>
+
+        <!-- Right Column: Info & Action -->
+        <div class="header-info">
+            <h1>FugoFresh: AI Calorie Tracker</h1>
+            <p class="subtitle">Rajibul &bull; Health & Fitness</p>
+
+
+
+
+            <!-- The "Install" Area (Email Flow) -->
+            <div class="install-area">
+
+                <!-- Step 1: Install Button (Triggers Popup) -->
+                <div id="email-step" class="compact-form">
+                    <div class="input-row">
+                        <!-- Email Input Removed -->
+                        <button id="join-btn" class="install-btn">
+                            Install
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Download Link (Hidden) -->
+                <div id="download-step" class="hidden">
+                    <p class="success-text"><i class="fa-solid fa-check-circle"></i> Added! Install now:</p>
+                    <a href="https://play.google.com/store/apps/details?id=rajibul.fugofresh.tracker" target="_blank"
+                        class="real-install-btn">
+                        Install on Google Play
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+
+
+
+        <!-- How to Join Section -->
+        <div id="guide-section" class="guide-section fade-in hidden">
+            <h3>How to Join Beta</h3>
+            <div class="guide-container">
+                <!-- Step 1 -->
+                <div class="guide-step">
+                    <span class="step-badge">1</span>
+                    <img src="assets/Untitled131_20260113092136.png" alt="Step 1: Click Sign up">
+                    <p>Click Sign up</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="guide-step">
+                    <span class="step-badge">2</span>
+                    <img src="assets/Untitled131_20260113092130.png" alt="Step 2: Continue">
+                    <p>Continue</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="guide-step">
+                    <span class="step-badge">3</span>
+                    <img src="assets/Untitled131_20260113092126.png" alt="Step 3: Join Group">
+                    <p>Join Group</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="guide-step">
+                    <span class="step-badge">4</span>
+                    <img src="assets/Untitled131_20260113092120.png" alt="Step 4: Click Join Group">
+                    <p>Click Join Group</p>
+                </div>
+            </div>
+            <!-- Action Button (Revealed after steps) -->
+            <div id="join-group-container" class="guide-action hidden">
+                <a href="https://groups.google.com/" target="_blank" class="join-group-btn">Join Google Group</a>
+            </div>
+        </div>
+
+        <!-- App Screenshots -->
+        <div class="screenshots-section fade-in">
+            <h3>App Preview</h3>
+            <div class="screenshots-container">
+                <button class="scroll-btn left-btn" id="scroll-left"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="screenshots-scroll" id="screenshots-scroll">
+                    <!-- Rotating or scrolling screenshots -->
+                    <!-- New Screenshots Ordered by User -->
+                    <div class="screenshot-item"><img src="assets/food.png" alt="Food Scanner"></div>
+                    <div class="screenshot-item"><img src="assets/body.png" alt="Body Scanner"></div>
+                    <div class="screenshot-item"><img src="assets/home.png" alt="Home Screen"></div>
+                    <div class="screenshot-item"><img src="assets/quiz.png" alt="Quiz Feature"></div>
+                    <div class="screenshot-item"><img src="assets/macro.png" alt="Macro Tracker"></div>
+                </div>
+                <button class="scroll-btn right-btn" id="scroll-right"><i
+                        class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Google Sign-In Modal -->
+
+
+    <footer>
+        <p>&copy; 2026 FugoFresh. All rights reserved.</p>
+    </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
