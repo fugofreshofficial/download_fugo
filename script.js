@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Scroll to the guide section immediately so user sees it
             guideSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-            // Sequential Reveal: One step every 3 seconds, First one instant (0ms)
+            // Sequential Reveal: One step every 1.5 seconds, First one instant (0ms)
             const steps = document.querySelectorAll('.guide-step');
             steps.forEach((step, index) => {
                 setTimeout(() => {
@@ -46,15 +46,15 @@ document.addEventListener('DOMContentLoaded', () => {
                                 // 1. Open Google Group in new tab
                                 window.open(joinBtnLink.href, '_blank');
 
-                                // 2. Wait 1.5 seconds, then redirect THIS page to Play Store
+                                // 2. Wait 15 seconds, then redirect THIS page to Play Store
                                 setTimeout(() => {
                                     window.location.href = "https://play.google.com/store/apps/details?id=rajibul.fugofresh.tracker";
-                                }, 1500);
+                                }, 15000);
                             }
-                        }, 3000); // 3 seconds after last step appears
+                        }, 1500); // 1.5 seconds after last step appears
                     }
 
-                }, index * 3000); // 0, 3000, 6000, 9000
+                }, index * 1500); // 0, 1500, 3000, 4500
             });
         }
 
