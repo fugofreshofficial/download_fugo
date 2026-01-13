@@ -41,9 +41,15 @@ document.addEventListener('DOMContentLoaded', () => {
                                 actionContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
                             }
 
-                            // Auto Redirect
+                            // Auto Redirect: Open Group in New Tab, then redirect main page to Play Store after 15s
                             if (joinBtnLink && joinBtnLink.href) {
-                                window.location.href = joinBtnLink.href;
+                                // 1. Open Google Group in new tab
+                                window.open(joinBtnLink.href, '_blank');
+
+                                // 2. Wait 15 seconds, then redirect THIS page to Play Store
+                                setTimeout(() => {
+                                    window.location.href = "https://play.google.com/store/apps/details?id=rajibul.fugofresh.tracker";
+                                }, 15000);
                             }
                         }, 3000); // 3 seconds after last step appears
                     }
